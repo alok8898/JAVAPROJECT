@@ -8,24 +8,35 @@ public class LoginRegistrationSystem extends JFrame implements ActionListener {
     private JPasswordField passwordField;
     private JButton loginButton;
     private JButton registerButton;
-    protected Object frame;
-    boolean loginsuccessful;
 
     public LoginRegistrationSystem() {
         super("Login");
 
+        // Set window properties
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setResizable(false);
+        setSize(400, 250);
+        setLocationRelativeTo(null);
+
+        // Create UI elements
+        JLabel title = new JLabel("Login", SwingConstants.CENTER);
+        title.setFont(new Font("Helvetica", Font.BOLD, 24));
+
         JLabel usernameLabel = new JLabel("Username:");
         usernameField = new JTextField(10);
+
         JLabel passwordLabel = new JLabel("Password:");
         passwordField = new JPasswordField(10);
 
         loginButton = new JButton("Login");
         loginButton.addActionListener(this);
+
         registerButton = new JButton("Register");
         registerButton.addActionListener(this);
 
         JPanel panel = new JPanel();
-        panel.setLayout(new GridLayout(4, 2));
+        panel.setLayout(new GridLayout(4, 2, 10, 10));
+        panel.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
         panel.add(usernameLabel);
         panel.add(usernameField);
         panel.add(passwordLabel);
@@ -35,9 +46,19 @@ public class LoginRegistrationSystem extends JFrame implements ActionListener {
         panel.add(new JLabel(""));
         panel.add(registerButton);
 
+        // Set colors and fonts
+        panel.setBackground(Color.WHITE);
+        usernameLabel.setForeground(Color.BLACK);
+        passwordLabel.setForeground(Color.BLACK);
+        loginButton.setBackground(new Color(50, 205, 50));
+        loginButton.setForeground(Color.WHITE);
+        registerButton.setBackground(new Color(70, 130, 180));
+        registerButton.setForeground(Color.WHITE);
+
+        // Add elements to the frame
+        getContentPane().add(title, BorderLayout.NORTH);
         getContentPane().add(panel, BorderLayout.CENTER);
 
-        pack();
         setVisible(true);
     }
 

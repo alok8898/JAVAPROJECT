@@ -1,6 +1,5 @@
-
-
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.GridLayout;
 
@@ -23,9 +22,10 @@ public class App extends JFrame implements ActionListener {
 
     public App() {
         frame = new JFrame();
-        frame.setBounds(200, 200, 550, 400);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.getContentPane().setLayout(null);
+        frame.setTitle("Fitness Calculator");
+        frame.setSize(550, 400);
+        frame.getContentPane().setBackground(Color.WHITE);
         
         JButton btnBmi = new JButton("Calculate BMI");
         btnBmi.addActionListener(new ActionListener() {
@@ -43,8 +43,13 @@ public class App extends JFrame implements ActionListener {
                 }
             }
         });
-        btnBmi.setBounds(25, 30, 150, 25);
-        frame.getContentPane().add(btnBmi);
+
+        btnBmi.setBackground(Color.BLUE);
+        btnBmi.setForeground(Color.WHITE);
+        btnBmi.setFocusPainted(false);
+
+        // btnBmi.setBounds(25, 30, 150, 25);
+        // frame.getContentPane().add(btnBmi);
         
         JButton btnWHR = new JButton("Calculate WHR");
         btnWHR.addActionListener(new ActionListener() {
@@ -58,8 +63,11 @@ public class App extends JFrame implements ActionListener {
                 }
             }
         });
-        btnWHR.setBounds(25, 70, 150, 25);
-        frame.getContentPane().add(btnWHR);
+        btnWHR.setBackground(Color.BLUE);
+        btnWHR.setForeground(Color.WHITE);
+        btnWHR.setFocusPainted(false);
+        // btnWHR.setBounds(25, 70, 150, 25);
+        // frame.getContentPane().add(btnWHR);
         
         JButton btnRFM = new JButton("Calculate RFM");
         btnRFM.addActionListener(new ActionListener() {
@@ -72,8 +80,11 @@ public class App extends JFrame implements ActionListener {
                 }
             }
         });
-        btnRFM.setBounds(25, 110, 150, 25);
-        frame.getContentPane().add(btnRFM);
+        btnRFM.setBackground(Color.BLUE);
+        btnRFM.setForeground(Color.WHITE);
+        btnRFM.setFocusPainted(false);
+        // btnRFM.setBounds(25, 110, 150, 25);
+        // frame.getContentPane().add(btnRFM);
         
         JButton btnBSA = new JButton("Calculate BSA");
         btnBSA.addActionListener(new ActionListener() {
@@ -86,9 +97,12 @@ public class App extends JFrame implements ActionListener {
                 }
             }
         });
+        btnBSA.setBackground(Color.BLUE);
+        btnBSA.setForeground(Color.WHITE);
+        btnBSA.setFocusPainted(false);
 
-        btnBSA.setBounds(25, 150, 150, 25);
-        frame.getContentPane().add(btnBSA);
+        // btnBSA.setBounds(25, 150, 150, 25);
+        // frame.getContentPane().add(btnBSA);
         
         JButton btnCI = new JButton("Calculate CI");
         btnCI.addActionListener(new ActionListener() {
@@ -101,22 +115,24 @@ public class App extends JFrame implements ActionListener {
                 }
             }
         });
-        btnCI.setBounds(25, 190, 150, 25);
-        frame.getContentPane().add(btnCI);
+        btnCI.setBackground(Color.BLUE);
+        btnCI.setForeground(Color.WHITE);
+        btnCI.setFocusPainted(false);
+        // btnCI.setBounds(25, 190, 150, 25);
+        // frame.getContentPane().add(btnCI);
       
 
         JPanel panel = new JPanel();
         panel.setLayout(new GridLayout(4, 2));
+        panel.setBackground(Color.WHITE);
         panel.add(btnBmi);
         panel.add(btnWHR);
         panel.add(btnRFM);
         panel.add(btnBSA);
         panel.add(btnCI);
-
-        getContentPane().add(panel, BorderLayout.CENTER);
-
-        pack();
-        setVisible(true);
+        
+        frame.add(panel, BorderLayout.CENTER);
+        frame.setVisible(true);
       
     }
 
